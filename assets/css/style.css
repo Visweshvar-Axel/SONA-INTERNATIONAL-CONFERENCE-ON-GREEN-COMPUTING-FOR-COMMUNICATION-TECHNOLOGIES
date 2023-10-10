@@ -290,7 +290,7 @@ h6 {
 
 #header.header-inner {
 
-  background: rgba(0, 0, 0, 0.98);
+  background: rgba(24, 38, 113, 0.98);
 
   height: 70px;
 
@@ -436,7 +436,6 @@ h6 {
 * Desktop Navigation
 
 */
-
 .navbar {
 
   padding: 0;
@@ -493,9 +492,9 @@ h6 {
 
   font-family: "Raleway", sans-serif;
 
-  font-weight: 600;
+  font-weight: 500;
 
-  font-size: 14px;
+  font-size: 22px;
 
   white-space: nowrap;
 
@@ -703,6 +702,7 @@ h6 {
   }
 
 }
+
 
  
 
@@ -932,7 +932,7 @@ h6 {
 
 .navbar-mobile .dropdown>.dropdown-active {
 
-  display: block;
+  display: block;
 
 }
 
@@ -1101,7 +1101,7 @@ h6 {
 
   height: 94px;
 
-  background: radial-gradient(rgb(255, 195, 29);
+  background: radial-gradient(rgb(255, 195, 29),
  50%, rgba(101, 111, 150, 0.15) 52%);
 
   border-radius: 50%;
@@ -1523,9 +1523,8 @@ h6 {
   transition: background-color ease-in-out 1.0s;
 }
 
-#schedule .schedule-item:hover {
-  /* background-color: #fff; */
-}
+/* #schedule .schedule-item:hover { background-color: #fff;} 
+*/
 
 #schedule .schedule-item time {
   padding-bottom: 5px;
@@ -2143,14 +2142,14 @@ h6 {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #101522;
+  background: #0f2459;
   padding: 0 0 25px 0;
   color: #eee;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: #040919;
+  background: #12276c;
   padding: 60px 0 30px 0;
 }
 
@@ -2332,4 +2331,16 @@ h6 {
 #venue h3{
   text-align: center;
   font-weight: 500;
+}
+
+/*___________________________*/
+
+#about:before {
+  /* background: rgb(255 255 255); */
+  background: rgb(246 247 253);
+}
+#about p {
+font-size:16px;
+color: #0e1b4d;
+margin-bottom: 3px;
 }
