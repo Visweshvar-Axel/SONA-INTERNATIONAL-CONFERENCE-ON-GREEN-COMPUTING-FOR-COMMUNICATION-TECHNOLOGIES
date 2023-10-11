@@ -83,12 +83,9 @@
 
     </nav><!-- .navbar -->
 
-
-
   </div>
 
 </header><!-- End Header -->
-
 
 
 <!-- ======= Hero Section ======= -->
@@ -118,6 +115,69 @@
 
 <main id="main">
 
+    <!-- Timer -->
+
+    <div class="timer">
+      <div class="count">
+          <h1 id="headline">CONFRENCE DATE</h1>
+          <div id="countdown">
+            <ul>
+              <li><span id="days"></span>days</li>
+              <li><span id="hours"></span>Hours</li>
+              <li><span id="minutes"></span>Minutes</li>
+              <li><span id="seconds"></span>Seconds</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <script>
+          (function () {
+          const second = 1000,
+          minute = second * 60,
+          hour = minute * 60,
+          day = hour * 24;
+  
+    //I'm adding this section so I don't have to keep updating this pen every year :-)
+    //remove this if you don't need it
+    let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "09/30/",
+        birthday = dayMonth + yyyy;
+   
+    today = mm + "/" + dd + "/" + yyyy;
+    if (today > birthday) {
+      birthday = dayMonth + nextYear;
+    }
+    //end
+   
+       const countDown = new Date(birthday).getTime(),
+        x = setInterval(function() {    
+  
+          const now = new Date().getTime(),
+          distance = countDown - now;
+  
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+  
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "It's my birthday!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
+      </script>
+  
+       <!-- End of Timer section -->
+
   <!-- ======= About Section ======= -->
   <section id="about">
     <div class="container position-relative" data-aos="fade-up">
@@ -143,7 +203,7 @@
   </section><!-- End About Section -->
 
  <!-- ======= About the Department ======= -->
- <section id="schedule" class="section-with-bg">
+ <section id="schedule" class="section-with-bg" style="height: 100vhz;">
   <div class="container" data-aos="fade-up">
     <div class="section-header">
       <h2 >About the Department</h2>
@@ -152,7 +212,7 @@
     <div>
     <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
       <li class="nav-item">
-        <a class="nav-link" href="#cse" role="tab" data-bs-toggle="tab">CSE</a>
+        <a class="nav-link active" href="#cse" role="tab" data-bs-toggle="tab">CSE</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#ece" role="tab" data-bs-toggle="tab">ECE</a>
@@ -161,7 +221,7 @@
         <a class="nav-link" href="#it" role="tab" data-bs-toggle="tab">IT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#mca" role="tab" data-bs-toggle="tab">MCA</a>
+        <a class="nav-link" href="#mca" role="tab" data-bs-toggle="tab">MCA</a>
       </li>
       
     </ul> </div>
@@ -311,12 +371,12 @@
 
         <div class=" row section-header">
          
-          <h2>TOPICS OF INTEREST</h2></div>
-          <h3 style="text-align: center;">AI for Green Computing</h3>
+          <h2 style="color: #0842a0;">TOPICS OF INTEREST</h2></div>
+          <h3 style="text-align: center; font-weight: bold;">AI FOR GREEN COMPUTING</h3>
           <div class="container">
             <div class="row">
               <div class="col-md-2"></div>
-          <div class="col-md-8" style="text-align: center;"><p>Artificial Intelligence (AI) for green computing helps to make information technology and related processes more environmentally friendly and sustainable</p>
+          <div class="col-md-8" style="text-align: justify;"><p>Artificial Intelligence (AI) for green computing helps to make information technology and related processes more environmentally friendly and sustainable.</p>
           </div>
             </div>
           </div>
@@ -327,26 +387,26 @@
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-6 bullets">
-              <h6>AI driven Green Computing Architectures </h6>
-              <h6>AI for Big data analytics</h6>
-              <h6>AI for  Data Storage, Processing and Management </h6>
-              <h6>AI  Virtualization</h6>
-              <h6>AI for Sustainable Computing </h6>
-              <h6>AI Bots </h6>
-              <h6>Software for Energy Management </h6>
-                <h6>Green IT Metrics</h6>
-                  <h6>AI Hybrid Algorithms</h6>            
+              <h6><span class="high">A</span>I driven Green Computing Architectures </h6>
+              <h6><span class="high">A</span>I for Big data analytics</h6>
+              <h6><span class="high">A</span>I for  Data Storage, Processing and Management </h6>
+              <h6><span class="high">A</span>I  Virtualization</h6>
+              <h6><span class="high">A</span>I for Sustainable Computing </h6>
+              <h6><span class="high">A</span>I Bots </h6>
+              <h6><span class="high">S</span>oftware for Energy Management </h6>
+                <h6><span class="high">G</span>reen IT Metrics</h6>
+                  <h6><span class="high">A</span>I Hybrid Algorithms</h6>            
             </div>
             <div class="col-md-5 bullets">
-              <h6>AI Optimization algorithms </h6>
-              <h6>Cognitive computing</h6>
-              <h6>Generative AI for Green Computing</h6>
-              <h6>Green IT solutions using NLP</h6>
-              <h6>AI for Augmented/ Virtual Reality</h6>
-                <h6>AI Image processing for Green IT solutions</h6>
-                  <h6>AI for Distributed Intelligent Information System</h6>
-                  <h6>AI Solutions for Sustainable Agriculture</h6>
-                  <h6>AI for Augmented/ Virtual Reality</h6>
+              <h6><span class="high">A</span>I Optimization algorithms </h6>
+              <h6><span class="high">C</span>ognitive computing</h6>
+              <h6><span class="high">G</span>enerative AI for Green Computing</h6>
+              <h6><span class="high">G</span>reen IT solutions using NLP</h6>
+              <h6><span class="high">A</span>I for Augmented/ Virtual Reality</h6>
+                <h6><span class="high">A</span>I Image processing for Green IT solutions</h6>
+                  <h6><span class="high">A</span>I for Distributed Intelligent Information System</h6>
+                  <h6><span class="high">A</span>I Solutions for Sustainable Agriculture</h6>
+                  <h6><span class="high">A</span>I for Augmented/ Virtual Reality</h6>
             </div>
 
           </div>
@@ -354,11 +414,11 @@
          
          
             <!-- <h2>Energy content</h2> -->
-            <h3 style="margin-top: 60px; text-align: center; ">Energy Efficient Communication Network</h3>
+            <h3 style="margin-top: 60px; text-align: center; font-weight: bold;">ENERGY EFFICIENT COMMUNICATION NETWORK</h3>
             <div class="container">
               <div class="row">
                 <div class="col-md-2"></div>
-                <div class="col-md-8" style="text-align: center;"><p>An energy-efficient communication network is a network infrastructure designed to minimize energy consumption while maintaining  network performance and reliability. Also it helps reduce the environmental impact of communication technologies and lowers operational costs.</p>
+                <div class="col-md-8" style="text-align: justify;"><p>An energy-efficient communication network is a network infrastructure designed to minimize energy consumption while maintaining  network performance and reliability. Also it helps reduce the environmental impact of communication technologies and lowers operational costs.</p>
                 </div>
               </div>
             </div>
@@ -369,69 +429,367 @@
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-6 bullets">
-                <h6>Energy-efficient Network Services and Operations</h6>
-                <h6>Energy- and power-constrained network devices</h6>
-                <h6>Energy Efficient Physical layer and MAC layer Protocols</h6>
-                <h6>Energy efficient IT infrastructure</h6>
-                <h6>Energy-efficient High Performance Networks</h6>
-                <h6>Energy-Aware Routing Protocols</h6>
-                <h6>Software Defined Networks </h6>          
+                <h6><span class="high">E</span>nergy-efficient Network Services and Operations</h6>
+                <h6><span class="high">E</span>nergy- and power-constrained network devices</h6>
+                <h6><span class="high">E</span>nergy Efficient Physical layer and MAC layer Protocols</h6>
+                <h6><span class="high">E</span>nergy efficient IT infrastructure</h6>
+                <h6><span class="high">E</span>nergy-efficient High Performance Networks</h6>
+                <h6><span class="high">E</span>nergy-Aware Routing Protocols</h6>
+                <h6><span class="high">S</span>oftware Defined Networks </h6>          
               </div>
               <div class="col-md-5 bullets">
-                <h6>Parallel processing for energy efficiency</h6>
-                <h6>Energy efficiency in aerial/UAV communication networks</h6>
-                <h6>Energy minimization in  Wireless Sensor Networks </h6>
-                <h6>Optimization in  Protocols for energy efficiency</h6>
-                <h6>5G and green wireless concepts for the future</h6>
-                  <h6>Next generation Networks.</h6>
+                <h6><span class="high">P</span>arallel processing for energy efficiency</h6>
+                <h6><span class="high">E</span>nergy efficiency in aerial/UAV communication networks</h6>
+                <h6><span class="high">E</span>nergy minimization in  Wireless Sensor Networks </h6>
+                <h6><span class="high">O</span>ptimization in  Protocols for energy efficiency</h6>
+                <h6><span class="high">5</span>G and green wireless concepts for the future</h6>
+                  <h6><span class="high">N</span>ext generation Networks.</h6>
               </div>
  
             </div>
 
-       
-              <!-- <h2>TOPICS OF INTEREST</h2> -->
-              <h3 style="margin-top: 60px; text-align: center;">Green Intelligent Systems</h3>
+              <h3 style="margin-top: 60px; text-align: center; font-weight: bold;">GREEN INTELLIGENT SYSTEMS</h3>
               <div class="container">
                 <div class="row">
                   <div class="col-md-2"></div>
-                  <div class="col-md-8" style="text-align: center;"><p>Green intelligent systems are advanced technological solutions that prioritize sustainability, energy efficiency, and environmental responsibility</p>
+                  <div class="col-md-8" style="text-align: justify;"><p>Green intelligent systems are advanced technological solutions that prioritize sustainability, energy efficiency, and environmental responsibility</p>
                   </div>
                 </div>
               </div>
 
-             
-   
             <div class="container">
               <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-6 bullets">
-                  <h6>Smart sensing systems </h6>
-                  <h6>Intelligent Bots </h6>
-                  <h6>Eco-Friendly IoT</h6>
-                  <h6>Intelligent cloud-support communications</h6>
-                  <h6>Smart city</h6>
-                  <h6>Green vehicle, green home and  green buildings </h6>
+                  <h6><span class="high">S</span>mart sensing systems </h6>
+                  <h6><span class="high">I</span>ntelligent Bots </h6>
+                  <h6><span class="high">E</span>co-Friendly IoT</h6>
+                  <h6><span class="high">I</span>ntelligent cloud-support communications</h6>
+                  <h6><span class="high">S</span>mart city</h6>
+                  <h6><span class="high">G</span>reen vehicle, green home and  green buildings </h6>
                            
                 </div>
                 <div class="col-md-5 bullets">
-                  <h6>Green industrial automation and control</h6>
-                  <h6>Intelligent Transport Systems and control</h6>
-                  <h6>Smart Grid</h6>
-                  <h6>Green IT Solutions in  Agriculture</h6>
-                  <h6>Green IT  in Smart Manufacturing </h6>
+                  <h6><span class="high">G</span>reen industrial automation and control</h6>
+                  <h6><span class="high">I</span>ntelligent Transport Systems and control</h6>
+                  <h6><span class="high">S</span>mart Grid</h6>
+                  <h6><span class="high">G</span>reen IT Solutions in  Agriculture</h6>
+                  <h6><span class="high">G</span>reen IT  in Smart Manufacturing </h6>
                     <!-- <h5> Next generation Networks.</h5> -->
                 </div>
-   
               </div>
- 
 
+              <h3 style="margin-top: 60px; text-align: center; font-weight: bold;">RECENT TRENDS IN COMMUNICATION TECHNOLOGIES</h3>
+              <div class="container">
+                <!-- <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8" style="text-align: justify;"><p>Green intelligent systems are advanced technological solutions that prioritize sustainability, energy efficiency, and environmental responsibility</p>
+                  </div> -->
+                </div>
+              </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 bullets">
+                  <h6><span class="high">B</span>iometric Security ND Fuzzy Systems </h6>
+                  <h6><span class="high">D</span>ata Integrity Models for Authentication, Trust and Authorization</h6>
+                  <h6><span class="high">W</span>ireless Network Security and Information Hiding</h6>
+                  <h6><span class="high">A</span>ccess Control and Intrusion Detection</h6>
+                  <h6><span class="high">B</span>io-Medical and Bio Informatic Applications</h6>
+                  <h6><span class="high">B</span>io-Inspired Algorithms</h6>
+                  <h6><span class="high">I</span>ntrusion Detection and Vulnerability Assessment</h6>
+                  <h6><span class="high">S</span>ensor and Mobile Ad Hoc Network Security</h6>
+                  <h6><span class="high">S</span>ervice and Systems Design and Quos Network Security</h6>
+                  <h6><span class="high">B</span>iological and Nature-Inspired Algorithms</h6>
+                  <h6><span class="high">D</span>istributed Computing, Data Fusion and Aggregation</h6>
+                  <h6><span class="high">I</span>nternet of Things (IoT) and Cyber-physical Networked Systems</h6>
+                           
+                </div>
+                <div class="col-md-5 bullets">
+                  <h6><span class="high">M</span>obile Computing and Vehicle Communications</h6>
+                  <h6><span class="high">N</span>etwork Management and Autonomic Computing</h6>
+                  <h6><span class="high">N</span>ano Communication Networks</h6>
+                  <h6><span class="high">P</span>rivacy Protection Schemes and Sensitive Data Collection</h6>
+                  <h6><span class="high">R</span>ecommendation Systems and Networks</h6>
+                  <h6><span class="high">S</span>ignal and Information Processing over Networks</h6>
+                  <h6><span class="high">S</span>urveillance Networks and Visual Intelligence</h6>
+                  <h6><span class="high">V</span>LSI Design and Communication Networks</h6>
+                  <h6><span class="high">W</span>ireless Body Area Networks</h6>
+                  <h6><span class="high">A</span>rtificial Intelligence and Data Science</h6>
+                  <h6><span class="high">M</span>achine Learning/Deep Learning</h6>
+                </div>
+              </div>
         </div>
-
-
-
       </div>
 
     </section><!-- End Venue Section -->
+
+<!-- =======  paper submission Section ======= -->
+<style>
+  *,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+}
+
+
+.loading card {
+  height: 355px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.loading h1, h2{
+  font-family: "Inter", sans-serif;
+}
+/* ============css loder============ */
+
+
+.load{
+  width: 100%;
+  height: 12rem;
+  display:flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+position: relative;
+width: 10rem;
+height: 10rem;
+}
+
+.loader:before , .loader:after{
+content: '';
+border-radius: 50%;
+position: absolute;
+inset: 0;
+box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loader:after {
+box-shadow: 0 2px 0 #201377 inset;
+animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+0% {  transform: rotate(0)}
+100% { transform: rotate(360deg)}
+}
+
+/* .loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 10rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+}
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem #d4d41f;
+  animation-name: pulsIn;
+}
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 #261ace;
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem #361998;
+    opacity: 1;
+  }
+  50%, 100% {
+    box-shadow: inset 0 0 0 0 #af9c0d;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+  0%, 50% {
+    box-shadow: 0 0 0 0 #23950f;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem #a71818;
+    opacity: 1;
+  }
+} */
+    
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
+/* =========================================== */
+
+.grid {
+ 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+
+
+.card__content {
+  padding: 12px 12px;
+}
+
+.top__header {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 3rem;
+
+}
+
+.center__num{
+    font-size: 3rem;
+    font-weight:300;
+    position: absolute;
+    align-items: center;
+    margin: 0%;
+}
+
+span{
+    color: rgb(35, 36, 122);
+    font-weight: 600;
+}
+
+.card__header {
+    text-transform: capitalize;
+    text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.5rem;
+}
+
+.card__header__2 {
+    text-transform: capitalize;
+    text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.5rem;
+}
+
+.bottom__header{
+    padding-top: 5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    
+   
+}
+ </style>
+<section id="dates">
+  <section class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Important Dates</h2>
+          <!-- <p>Here are some of our speakers</p> -->
+        </div>
+<div class="loading" style="padding: 0% 12%;">
+
+                <div class="grid">
+
+
+                        <div class="card">
+                            <div class="load">
+
+                                <h1 class="center__num">1</h1>
+                                <span class="loader"></span>
+
+                            </div>
+                                <div class="card__content">
+
+                                    <h2 class="card__header">Abstract submission due on</h2>
+                                    <h2 class="card__header__2"> 29.04.2023</h2>
+                        
+                            </div>
+                         </div>
+
+
+
+                        <div class="card">
+                                <div class="load">
+
+                                    <h1 class="center__num">2</h1>
+                                    <span class="loader"></span>
+
+                                </div>
+                                    <div class="card__content">
+                                        <h2 class="card__header">intimation of Acceptance</h2>
+                                        <h2 class="card__header__2"> 01.05.2023</h2>
+                                    </div>
+                        </div>
+                    
+
+                    
+
+                        <div class="card">
+                            <div class="load">
+
+                                <h1 class="center__num">3</h1>
+                                <span class="loader"></span>
+
+                            </div>
+                            
+                                <div class="card__content">
+                                    <h2 class="card__header">Registration commences on</h2>
+                                    <h2 class="card__header__2"> 02.05.2023</h2>
+                            </div>
+                        </div>
+                    
+
+
+                        
+                        <div class="card">
+                            <div class="load">
+
+                                <h1 class="center__num">4</h1>
+                                <span class="loader"></span>
+
+                            </div>
+                                <div class="card__content">
+                                    <h2 class="card__header">Full manuscript submission due on</h2>
+                                    <h2 class="card__header__2"> 01.05.2023</h2>
+                            
+                            </div>
+                        </div>
+
+
+                </div>
+  
+</div>
+</section>
+
+<!-- =======  END paper submission Section ======= -->
 <!-- =======  paper submission Section ======= -->
 <section id="paper" class="section-with-bg">
   <br><br>
@@ -601,13 +959,10 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-lg-4 col-md-7 footer-info">
-          <img src="assets/img/logo.png" alt="TheEvenet">
-          <p>Sona College of Technology is a private college in India located in Salem, Tamilnadu, India. It was established in 1997 by Thiru. M.S. Chockalingam and gained autonomous status in 2012.</p>
-        </div>
 
-        <div class="col-lg-4 col-md-6 footer-links">
-          <h4>Useful Links</h4>
+        <div class="col-lg-7 col-md-6 footer-links">
+
+          <h4 style="font-size: xx-large;">Useful Links</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="https://www.sonatech.ac.in" target="_blank">Home</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="https://www.sonatech.ac.in/about-sona/" target="_blank">About us</a></li>
@@ -623,8 +978,8 @@
             color: rgb(255, 195, 29);
           }
         </style>
-        <div class="col-lg-4 col-md-6 footer-contact" id="footlink">
-          <h4>Contact Us</h4>
+        <div class="col-lg-5 col-md-6 footer-contact" id="footlink">
+          <h4 style="font-size: xx-large;">Contact Us</h4>
           <p>
             Sona College of Technology, <br>
             Junction Main Road,<br>
@@ -632,25 +987,27 @@
             <strong>Phone:</strong><a href="tel:+91-4274099999"> 0427-4099999</a><br>
             <strong>E-Mail:</strong><a href="mailto:info@sonatech.ac.in"> info@sonatech.ac.in</a>
           </p>
-
-          <div class="social-links">
-            <a href="https://www.youtube.com/c/SonaCollege" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
-            <a href="https://twitter.com/sonacollege/" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.facebook.com/sonacollege" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/sonacollege/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/school/sona-college-of-technology/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.sonatech.ac.in/blog" class="youtube" target="_blank"><i class="bi bi-newspaper"></i></a>
-            
-          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="social-links" style="display: flex; justify-content: center; flex-wrap: nowrap;">
+          <a href="https://www.youtube.com/c/SonaCollege" class="youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://twitter.com/sonacollege/" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/sonacollege" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/sonacollege/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/school/sona-college-of-technology/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.sonatech.ac.in/blog" class="youtube" target="_blank"><i class="bi bi-newspaper"></i></a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="copyright">
-      &copy; 2023 <strong>Sona College of Technology, Salem - 636005.</strong> All Rights Reserved
+      &copy; 2023 <strong>Sonatech</strong> All Rights Reserved
       <br>
-      Developed By <strong>Department of Master of Computer Applications, <br> Sona College of Technology, <br> Salem - 636005. </strong>
+      Design and Developed By <strong>Sona College Of Technology, Salem - 636005. </strong>
     </div>
   </div>
 </footer><!-- End  Footer -->
