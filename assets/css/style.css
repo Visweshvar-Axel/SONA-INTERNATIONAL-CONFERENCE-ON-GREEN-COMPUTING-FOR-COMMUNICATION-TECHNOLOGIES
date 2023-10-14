@@ -120,6 +120,18 @@ h6 {
   opacity: 1;
 }
 
+#head_media{
+  font-size: 35px;
+}
+
+
+@media (max-width: 1100px) {
+  #head_media{
+    font-size: 25px;
+  }
+  
+}
+
 /* Sections Header
 
 --------------------------------*/
