@@ -129,6 +129,7 @@ h6 {
   #head_media{
     font-size: 25px;
   }
+  
 }
 
 /* Sections Header
@@ -766,9 +767,9 @@ h6 {
 
   font-family: "Raleway", sans-serif;
 
-  font-size: 30px;
+  font-size: px;
 
-  font-weight: 550;
+  font-weight: 600;
 
   text-transform: uppercase;
 }
@@ -2480,4 +2481,25 @@ blink{animation: blink 0.5s infinite;}
   overflow: hidden;
   display: inline-block;
  animation: scroll 10s linear infinite;
+}
+
+
+/* _____previous____ */
+
+@media (max-width: 600px) {
+
+  #previous .section-header h2{
+
+    font-size: 30px;
+    word-spacing: 5px;
+  }
+  #previous .disfl{
+    flex-direction: column;
+  }
+  #previous img{
+    padding-left: 2px;
+    padding-top: 2px;
+    height: 80% !important;
+    width: 90% !important;
+  }
 }
